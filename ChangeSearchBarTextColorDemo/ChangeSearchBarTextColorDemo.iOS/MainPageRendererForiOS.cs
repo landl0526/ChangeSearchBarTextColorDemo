@@ -50,6 +50,13 @@ namespace ChangeSearchBarTextColorDemo.iOS
                 var textField = (UITextField)searchController.SearchBar.ValueForKey(searchKey);
                 textField.TextColor = UIColor.Red;
                 //You can also do other textField's configuration here
+                UIView backgroundView = textField.Subviews.FirstOrDefault();
+                if (backgroundView != null)
+                {
+                    backgroundView.BackgroundColor = UIColor.Blue;
+                    backgroundView.Layer.CornerRadius = 10;
+                    backgroundView.ClipsToBounds = true;
+                }
             }
         }
     }
